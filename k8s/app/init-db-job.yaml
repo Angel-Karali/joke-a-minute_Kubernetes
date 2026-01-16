@@ -1,0 +1,24 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: init-db
+spec:
+  backoffLimit: 3
+  template:
+    spec:
+      restartPolicy: OnFailure
+      containers:
+        - name: init-db
+          image: ghcr.io/filusion/joke-a-minute_docker-compose:latest
+          command: ["python", "init_db.py"]
+          env:
+            - name: DB_HOST
+              value: "mysql"
+            - name: DB_PORT
+              value: "3306"
+            - name: DB_USER
+              value: "jokeuser"
+            - name: DB_PASSWORD
+              value: "CHANGE_ME_USER"
+            - name: DB_NAME
+              value: "jokes"

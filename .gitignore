@@ -39,3 +39,7 @@ dist/
 *.pem
 *.crt
 *.key
+
+
+# local binaries
+kubectl
