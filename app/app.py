@@ -51,7 +51,7 @@ HTML_TEMPLATE = '''
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: radial-gradient(circle, rgba(255, 99, 72, 1) 0%, rgba(255, 71, 87, 1) 50%, rgba(255, 165, 2, 1) 100%);
             min-height: 100vh;
             padding: 20px;
         }
