@@ -4,7 +4,9 @@ metadata:
   name: joke-app-ingress
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
+    cert-manager.io/cluster-issuer: letsencrypt-staging
 spec:
+  ingressClassName: public
   rules:
     - host: devops-sk-10.lrk.si
       http:
@@ -16,3 +18,7 @@ spec:
                 name: app
                 port:
                   number: 80
+  tls:
+    - hosts:
+        - devops-sk-10.lrk.si
+      secretName: joke-app-tls
