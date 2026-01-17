@@ -19,8 +19,7 @@ spec:
     spec:
       containers:
         - name: app
-          image: ghcr.io/filusion/joke-a-minute_docker-compose:latest
-          # TODO: replace :latest with a fixed tag later (required by assignment)
+          image: ghcr.io/angel-karali/joke-a-minute_kubernetes:main-9f81765
           ports:
             - containerPort: 5000
               name: http
