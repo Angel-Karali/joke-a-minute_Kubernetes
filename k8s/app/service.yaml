@@ -5,6 +5,7 @@ metadata:
 spec:
   selector:
     app: joke-app
+   # version: green
   ports:
     - name: http
       port: 80
