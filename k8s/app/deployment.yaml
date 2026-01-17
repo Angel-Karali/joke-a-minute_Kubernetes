@@ -32,11 +32,20 @@ spec:
             - name: DB_HOST
               value: "mysql"
             - name: DB_NAME
-              value: "jokes"
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secret
+                  key: MYSQL_DATABASE
             - name: DB_USER
-              value: "jokeuser"
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secret
+                  key: MYSQL_USER
             - name: DB_PASSWORD
-              value: "CHANGE_ME_USER"
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secret
+                  key: MYSQL_PASSWORD
 
             - name: REDIS_HOST
               value: "redis"

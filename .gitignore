@@ -43,3 +43,4 @@ dist/
 
 # local binaries
 kubectl
+k8s/mysql/secret.yaml

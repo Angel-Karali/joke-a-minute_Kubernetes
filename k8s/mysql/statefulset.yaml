@@ -19,16 +19,9 @@ spec:
           ports:
             - containerPort: 3306
               name: mysql
-          env:
-            # TEMP only (we’ll move to Secrets later)
-            - name: MYSQL_ROOT_PASSWORD
-              value: "CHANGE_ME_ROOT"
-            - name: MYSQL_DATABASE
-              value: "jokes"
-            - name: MYSQL_USER
-              value: "jokeuser"
-            - name: MYSQL_PASSWORD
-              value: "CHANGE_ME_USER"
+          envFrom:
+            - secretRef:
+                name: mysql-secret
           volumeMounts:
             - name: mysql-data
               mountPath: /var/lib/mysql
