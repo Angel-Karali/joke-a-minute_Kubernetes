@@ -639,6 +639,7 @@ def get_db_connection():
 @app.route('/')
 def home():
     return render_template_string(HTML_TEMPLATE)
+    return f"<h1>Joke a minute</h1><p>Version: {APP_VERSION}</p>"
 
 
 @app.route('/joke')
